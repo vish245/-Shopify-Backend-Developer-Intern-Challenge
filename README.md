@@ -1,2 +1,3 @@
 # -Shopify-Backend-Developer-Intern-Challenge
-I have used a restaurant that acts as a warehouse. Other CRUD functionality remain the same.
+CRUD functionalities have been added to the website.
+New Wearhouses can be added and warehouse information can be updated.
