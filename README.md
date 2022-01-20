@@ -1,4 +1,9 @@
 # -Shopify-Backend-Developer-Intern-Challenge
+
+
+NOTE: A RESTAURANT MODEL HAS BEEN USED TO TEST CRUD FUNCTIONALITY INSTEAD OF WAREHOUSES. I.E -> Each restaurant represents a warehouse.
+
+
 CRUD functionalities have been added to the website.
 New Wearhouses can be added and warehouse information can be updated.
 
