@@ -1,0 +1,66 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Restaurant Info
+    body(onload="getCurrentRestaurant()") 
+        a(href="/home") Home  
+                
+        a(href="/restaurants") Restaurants  
+                
+        a(href="/addRestaurant") Add Restaurants
+
+        p <b>Restaurant ID: #{restID} </b>
+
+        p Restaurant Name:
+            input(type="text" id='restName' value=restaurant.name)
+
+        p Restaurant Min Order: 
+            input(type="text" id='minimumOrder' value=restaurant.min_order)
+
+        p Delivery Fee: 
+            input(type="text" id='deliveryFee' value=restaurant.delivery_fee)
+
+        h2 Add Category: 
+
+        p Category Name
+            input(type="text", id="categoryName")
+
+        button(id="addCategory" onclick="addCategory()") Add Category
+
+        h2 Add Item 
+        p Select Category 
+            select#sCategory
+                each cat,key  in restaurant.menu
+                    option(value = key) #{key}
+        
+        p Item Name: 
+            input(type="text", id="itemName")
+        
+        p Item Description: 
+            input(type="text", id="itemDescription")
+        
+        p Item Price
+            input(type="text", id="itemPrice")
+        
+        button(id="addItemButton" onclick="addItem()") Add Item
+        div(id="menu")
+            h2 Menu
+
+            each cat,key  in restaurant.menu
+                    div(id=key)
+                        h3 #{key}
+                        br
+                        each item,id in cat
+                            div(id=id)
+                                p <b>Item ID: </b>#{id}
+                                p Item Name: #{item.name}
+                                p Description: #{item.description}
+                                p Price: #{item.price}
+                                br
+
+        button(id="saveChanges" onclick="saveChanges()") Save Changes
+
+        script(src="../client.js")
